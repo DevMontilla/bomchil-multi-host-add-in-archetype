@@ -24,7 +24,11 @@ module.exports = async (env, options) => {
         import: ["./src/taskpane/index.tsx", "./src/taskpane/taskpane.html"],
         dependOn: "react",
       },
-      commands: "./src/commands/commands.ts",
+      modal: {
+        import: ["./src/taskpane/modalEntry.tsx", "./src/taskpane/modal.html"],
+        dependOn: "react",
+      },
+      commands: "./src/taskpane/commands/commands.ts",
     },
     output: {
       clean: true,
@@ -66,6 +70,11 @@ module.exports = async (env, options) => {
         template: "./src/taskpane/taskpane.html",
         chunks: ["polyfill", "taskpane", "react"],
       }),
+      new HtmlWebpackPlugin({
+        filename: "modal.html",
+        template: "./src/taskpane/modal.html",
+        chunks: ["polyfill", "modal", "react"],
+      }),
       new CopyWebpackPlugin({
         patterns: [
           {
@@ -87,7 +96,7 @@ module.exports = async (env, options) => {
       }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
-        template: "./src/commands/commands.html",
+        template: "./src/taskpane/commands/commands.html",
         chunks: ["polyfill", "commands"],
       }),
       new webpack.ProvidePlugin({

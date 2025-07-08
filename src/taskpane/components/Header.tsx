@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Image, tokens, makeStyles } from "@fluentui/react-components";
+import { openModal } from "../openModal";
 
 export interface HeaderProps {
   title: string;

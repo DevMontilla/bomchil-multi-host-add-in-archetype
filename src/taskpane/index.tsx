@@ -1,27 +1,19 @@
-import * as React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./components/App";
-import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import "./app.imports";
 
-/* global document, Office, module, require, HTMLElement */
+const MODAL_URL = window.location.origin + "/modal.html";
 
-const title = "Contoso Task Pane Add-in";
-
-const rootElement: HTMLElement | null = document.getElementById("container");
-const root = rootElement ? createRoot(rootElement) : undefined;
-
-/* Render application after Office initializes */
 Office.onReady(() => {
-  root?.render(
-    <FluentProvider theme={webLightTheme}>
-      <App title={title} />
-    </FluentProvider>
+  Office.context.ui.displayDialogAsync(
+    MODAL_URL,
+    { height: 50, width: 50, displayInIframe: true },
+    function (asyncResult) {
+      if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+        if (Office.context.ui.closeContainer) {
+          Office.context.ui.closeContainer();
+        }
+      } else {
+        alert("No se pudo abrir el modal principal del add-in.");
+      }
+    }
   );
 });
-
-if ((module as any).hot) {
-  (module as any).hot.accept("./components/App", () => {
-    const NextApp = require("./components/App").default;
-    root?.render(NextApp);
-  });
-}

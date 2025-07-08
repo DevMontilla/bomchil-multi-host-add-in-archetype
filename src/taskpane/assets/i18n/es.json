@@ -1,0 +1,60 @@
+{
+  "routes": {
+    "home": "Inicio",
+    "cases": "Casos",
+    "activities": "Actividades",
+    "people": "Personas",
+    "clients": "Clientes",
+    "systems": "Sistemas",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  },
+  "case": {
+    "id": "#254_a (ID del caso)",
+    "title": "Crear nuevo caso",
+    "description": "Completa los datos para crear y gestionar el caso"
+  },
+  "team": {
+    "label": "Equipo asociado",
+    "placeholder": "Selecciona el equipo",
+    "moreInfo": "Más información del equipo"
+  },
+  "client": {
+    "label": "Cliente",
+    "placeholder": "Selecciona el cliente"
+  },
+  "equipment": {
+    "status": {
+      "label": "Estado del equipo",
+      "placeholder": "Selecciona el estado"
+    },
+    "isNew": "¿El equipo es nuevo?"
+  },
+  "responsible": {
+    "label": "Responsables",
+    "placeholder": "Selecciona responsables",
+    "email": {
+      "placeholder": "Correo electrónico"
+    },
+    "phone": {
+      "placeholder": "Teléfono"
+    },
+    "hasTraining": "¿El usuario tiene capacitación sobre el equipo?"
+  },
+  "timeRange": {
+    "label": "¿En qué rango horario se espera al especialista?",
+    "placeholder": "Seleccionar rango horario"
+  },
+  "buttons": {
+    "cancel": "Cancelar",
+    "create": "Crear caso"
+  },
+  "sidebar": {
+    "operations": "OPERACIONES",
+    "administration": "ADMINISTRACIÓN"
+  },
+  "header": {
+    "description": "Consulta y gestiona casos",
+    "search": "Buscar"
+  }
+}
